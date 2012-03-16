@@ -1,0 +1,121 @@
+2012/03/08 04:06:56 [error] [php] include(1.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\xampp\htdocs\yii\YiiBase.php:418)
+Stack trace:
+#0 E:\xampp\htdocs\yii\YiiBase.php(198): import()
+#1 E:\xampp\htdocs\yii\base\CModule.php(283): createComponent()
+#2 E:\xampp\htdocs\yii\web\CWebApplication.php(331): CWebApplication->getModule()
+#3 E:\xampp\htdocs\yii\web\CWebApplication.php(270): CWebApplication->createController()
+#4 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController()
+#5 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#6 E:\xampp\htdocs\gulu\index.php(13): CWebApplication->run()
+REQUEST_URI=/gulu/index.php?r=gii
+in E:\xampp\htdocs\gulu\index.php (13)
+2012/03/08 04:07:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii、".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii???')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php?r=gii%E3%80%81
+---
+2012/03/08 04:07:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii23".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii23')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php?r=gii23
+---
+2012/03/08 04:07:30 [error] [php] include(1.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\xampp\htdocs\yii\YiiBase.php:418)
+Stack trace:
+#0 E:\xampp\htdocs\yii\YiiBase.php(198): import()
+#1 E:\xampp\htdocs\yii\base\CModule.php(283): createComponent()
+#2 E:\xampp\htdocs\yii\web\CWebApplication.php(331): CWebApplication->getModule()
+#3 E:\xampp\htdocs\yii\web\CWebApplication.php(270): CWebApplication->createController()
+#4 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController()
+#5 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#6 E:\xampp\htdocs\gulu\index.php(13): CWebApplication->run()
+REQUEST_URI=/gulu/index.php?r=gii
+in E:\xampp\htdocs\gulu\index.php (13)
+2012/03/10 10:34:02 [error] [php] Undefined variable: mail (E:\xampp\htdocs\gulu\protected\controllers\RegisterController.php:37)
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CController.php(287): RegisterController->runAction()
+#1 E:\xampp\htdocs\yii\web\CController.php(266): RegisterController->runActionWithFilters()
+#2 E:\xampp\htdocs\yii\web\CWebApplication.php(276): RegisterController->run()
+#3 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController()
+#4 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#5 E:\xampp\htdocs\gulu\index.php(13): CWebApplication->run()
+REQUEST_URI=/gulu/index.php?r=register
+in E:\xampp\htdocs\gulu\protected\controllers\RegisterController.php (37)
+in E:\xampp\htdocs\gulu\index.php (13)
+2012/03/12 16:52:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "qw".' in E:\xampp\htdocs\yii\web\CController.php:484
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CController.php(271): CController->missingAction('qw')
+#1 E:\xampp\htdocs\yii\web\CWebApplication.php(276): CController->run('qw')
+#2 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('register/qw')
+#3 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/gulu/index.php/register/qw
+---
+2012/03/12 16:52:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in E:\xampp\htdocs\yii\web\CController.php:484
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CController.php(271): CController->missingAction('view')
+#1 E:\xampp\htdocs\yii\web\CWebApplication.php(276): CController->run('view')
+#2 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('register/view')
+#3 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/gulu/index.php/register/123
+---
+2012/03/13 15:31:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii
+---
+2012/03/13 15:32:19 [error] [php] include(checkNick.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\xampp\htdocs\yii\YiiBase.php:418)
+Stack trace:
+#0 E:\xampp\htdocs\yii\validators\CValidator.php(171): import()
+#1 E:\xampp\htdocs\yii\base\CModel.php(285): createValidator()
+#2 E:\xampp\htdocs\yii\base\CModel.php(259): RegisterForm->createValidators()
+#3 E:\xampp\htdocs\yii\base\CModel.php(544): RegisterForm->getValidators()
+#4 E:\xampp\htdocs\yii\gii\generators\form\FormCode.php(92): RegisterForm->getSafeAttributeNames()
+#5 E:\xampp\htdocs\yii\gii\generators\form\templates\default\form.php(19): FormCode->getModelAttributes()
+#6 E:\xampp\htdocs\yii\gii\CCodeModel.php(242): require()
+#7 E:\xampp\htdocs\yii\gii\generators\form\FormCode.php(80): FormCode->render()
+#8 E:\xampp\htdocs\yii\gii\CCodeGenerator.php(161): FormCode->prepare()
+#9 E:\xampp\htdocs\yii\gii\CCodeGenerator.php(64): FormGenerator->prepare()
+#10 E:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): FormGenerator->actionIndex()
+#11 E:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#12 E:\xampp\htdocs\yii\web\CController.php(287): FormGenerator->runAction()
+#13 E:\xampp\htdocs\yii\web\CController.php(266): FormGenerator->runActionWithFilters()
+#14 E:\xampp\htdocs\yii\web\CWebApplication.php(276): FormGenerator->run()
+#15 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController()
+#16 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 E:\xampp\htdocs\gulu\index.php(13): CWebApplication->run()
+REQUEST_URI=/gulu/index.php/gii/form
+in E:\xampp\htdocs\gulu\index.php (13)
+2012/03/13 15:32:32 [error] [php] include(checkNick.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\xampp\htdocs\yii\YiiBase.php:418)
+Stack trace:
+#0 E:\xampp\htdocs\yii\validators\CValidator.php(171): import()
+#1 E:\xampp\htdocs\yii\base\CModel.php(285): createValidator()
+#2 E:\xampp\htdocs\yii\base\CModel.php(259): RegisterForm->createValidators()
+#3 E:\xampp\htdocs\yii\base\CModel.php(544): RegisterForm->getValidators()
+#4 E:\xampp\htdocs\yii\gii\generators\form\FormCode.php(92): RegisterForm->getSafeAttributeNames()
+#5 E:\xampp\htdocs\yii\gii\generators\form\templates\default\form.php(19): FormCode->getModelAttributes()
+#6 E:\xampp\htdocs\yii\gii\CCodeModel.php(242): require()
+#7 E:\xampp\htdocs\yii\gii\generators\form\FormCode.php(80): FormCode->render()
+#8 E:\xampp\htdocs\yii\gii\CCodeGenerator.php(161): FormCode->prepare()
+#9 E:\xampp\htdocs\yii\gii\CCodeGenerator.php(64): FormGenerator->prepare()
+#10 E:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): FormGenerator->actionIndex()
+#11 E:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#12 E:\xampp\htdocs\yii\web\CController.php(287): FormGenerator->runAction()
+#13 E:\xampp\htdocs\yii\web\CController.php(266): FormGenerator->runActionWithFilters()
+#14 E:\xampp\htdocs\yii\web\CWebApplication.php(276): FormGenerator->run()
+#15 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController()
+#16 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 E:\xampp\htdocs\gulu\index.php(13): CWebApplication->run()
+REQUEST_URI=/gulu/index.php/gii/form
+in E:\xampp\htdocs\gulu\index.php (13)
