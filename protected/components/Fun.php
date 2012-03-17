@@ -1,4 +1,7 @@
 <?php
+/*
+ * 常用的静态方法
+ */
 class Functions
 {
 	public static function getIp()

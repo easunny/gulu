@@ -16,7 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-),
+	),
 
 	'modules'=>array(
 // uncomment the following to enable the Gii tool
@@ -26,16 +26,17 @@ return array(
 			'password'=>'1',
 // If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
-),
+		),
 
-),
+	),
 
 // application components
 	'components'=>array(
 		'user'=>array(
+			'class'=>'WebUser',
 // enable cookie-based authentication
 			'allowAutoLogin'=>true,
-),
+		),
 		'mailer' => array(
 			'class' => 'application.extensions.mailer.EMailer',
 			'pathViews' => 'application.views.email',
@@ -48,7 +49,7 @@ return array(
 			'Password' => 'gulu!@#321',//邮箱密码
 			'From' => 'system@gulu.me',
 			'FromName' => '咕噜工坊'
-			),
+		),
 			// uncomment the following to enable URLs in path-format
 		'urlManager'=>array(
 			'urlFormat'=>'path',
@@ -59,7 +60,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-			),
+		),
 			/*
 			 'db'=>array(
 			 'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -73,12 +74,12 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
-			),
+		),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
-			),
+		),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -93,13 +94,13 @@ return array(
 			),
 			*/
 			),
-			),
-			),
+		),
+	),
 
 			// application-level parameters that can be accessed
 			// using Yii::app()->params['paramName']
 	'params'=>array(
 			// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
-			),
-			);
+	),
+);
