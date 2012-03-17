@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "auth_email".
  *
- * The followings are the available columns in table 'users':
+ * The followings are the available columns in table 'auth_email':
  * @property integer $uid
- * @property string $nick
- * @property integer $lastTime
- * @property string $lastIp
+ * @property string $email
+ * @property string $password
+ * @property integer $updateTime
  */
-class Users extends CActiveRecord
+class AuthEmail extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return AuthEmail the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -26,7 +26,7 @@ class Users extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'auth_email';
 	}
 
 	/**
@@ -37,13 +37,13 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nick', 'required'),
-			array('lastTime', 'numerical', 'integerOnly'=>true),
-			array('nick', 'length', 'max'=>60),
-			array('lastIp', 'length', 'max'=>40),
+			array('uid, email, password, updateTime', 'required'),
+			array('uid, updateTime', 'numerical', 'integerOnly'=>true),
+			array('email', 'length', 'max'=>255),
+			array('password', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('uid, nick, lastTime, lastIp', 'safe', 'on'=>'search'),
+			array('uid, email, password, updateTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,9 +65,9 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'uid' => 'Uid',
-			'nick' => 'Nick',
-			'lastTime' => 'Last Time',
-			'lastIp' => 'Last Ip',
+			'email' => 'Email',
+			'password' => 'Password',
+			'updateTime' => 'Update Time',
 		);
 	}
 
@@ -83,9 +83,9 @@ class Users extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('uid',$this->uid);
-		$criteria->compare('nick',$this->nick,true);
-		$criteria->compare('lastTime',$this->lastTime);
-		$criteria->compare('lastIp',$this->lastIp,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('password',$this->password,true);
+		$criteria->compare('updateTime',$this->updateTime);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

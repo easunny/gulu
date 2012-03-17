@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "register".
+ * This is the model class for table "reg_email".
  *
- * The followings are the available columns in table 'register':
+ * The followings are the available columns in table 'reg_email':
  * @property integer $id
  * @property string $email
  * @property string $rand
@@ -11,12 +11,12 @@
  * @property integer $timestamp
  * @property integer $del
  */
-class Register extends CActiveRecord
+class RegEmail extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Register the static model class
+	 * @return RegEmail the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -28,7 +28,7 @@ class Register extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'register';
+		return 'reg_email';
 	}
 
 	/**
@@ -39,13 +39,14 @@ class Register extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-		array('email, rand, data, timestamp', 'required'),
-		array('timestamp, del', 'numerical', 'integerOnly'=>true),
-		array('email', 'length', 'max'=>255),
-		array('rand', 'length', 'max'=>32),
-		// The following rule is used by search().
-		// Please remove those attributes that should not be searched.
-		array('id, email, rand, data, timestamp, del', 'safe', 'on'=>'search'),
+			array('email, rand, timestamp', 'required'),
+			array('timestamp, del', 'numerical', 'integerOnly'=>true),
+			array('email', 'length', 'max'=>255),
+			array('rand', 'length', 'max'=>32),
+			array('data', 'safe'),
+			// The following rule is used by search().
+			// Please remove those attributes that should not be searched.
+			array('id, email, rand, data, timestamp, del', 'safe', 'on'=>'search'),
 		);
 	}
 

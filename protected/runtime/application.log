@@ -119,3 +119,76 @@ Stack trace:
 #17 E:\xampp\htdocs\gulu\index.php(13): CWebApplication->run()
 REQUEST_URI=/gulu/index.php/gii/form
 in E:\xampp\htdocs\gulu\index.php (13)
+2012/03/17 16:50:00 [error] [exception.CException] exception 'CException' with message 'Property "RegisterForm.nick" is not defined.' in E:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\helpers\CHtml.php(2044): CComponent->__get('nick')
+#1 E:\xampp\htdocs\yii\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(RegisterForm), 'nick')
+#2 E:\xampp\htdocs\yii\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(RegisterForm), 'nick', Array)
+#3 E:\xampp\htdocs\yii\web\widgets\CActiveForm.php(568): CHtml::activeTextField(Object(RegisterForm), 'nick', Array)
+#4 E:\xampp\htdocs\gulu\protected\views\register\index.php(14): CActiveForm->textField(Object(RegisterForm), 'nick')
+#5 E:\xampp\htdocs\yii\web\CBaseController.php(127): require('E:\xampp\htdocs...')
+#6 E:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('E:\xampp\htdocs...', Array, true)
+#7 E:\xampp\htdocs\yii\web\CController.php(870): CBaseController->renderFile('E:\xampp\htdocs...', Array, true)
+#8 E:\xampp\htdocs\yii\web\CController.php(783): CController->renderPartial('index', Array, true)
+#9 E:\xampp\htdocs\gulu\protected\controllers\RegisterController.php(45): CController->render('index', Array)
+#10 E:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): RegisterController->actionIndex()
+#11 E:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 E:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 E:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 E:\xampp\htdocs\yii\web\CWebApplication.php(276): CController->run('index')
+#15 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('register/index')
+#16 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/gulu/index.php/register
+---
+2012/03/17 16:50:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii
+---
+2012/03/17 16:50:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii/index
+---
+2012/03/17 16:50:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii/index
+---
+2012/03/17 16:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii
+---
+2012/03/17 16:51:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii/
+---
+2012/03/17 16:51:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in E:\xampp\htdocs\yii\web\CWebApplication.php:280
+Stack trace:
+#0 E:\xampp\htdocs\yii\web\CWebApplication.php(135): CWebApplication->runController('gii/index')
+#1 E:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\gulu\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/gulu/index.php/gii/
+---
+2012/03/17 16:52:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gulu.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in E:\xampp\htdocs\gulu\index.php (13)
