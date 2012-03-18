@@ -4,10 +4,12 @@
  * This is the model class for table "auth_email".
  *
  * The followings are the available columns in table 'auth_email':
+ * @property integer $id
  * @property integer $uid
  * @property string $email
  * @property string $password
  * @property integer $updateTime
+ * @property integer $createTime
  */
 class AuthEmail extends CActiveRecord
 {
@@ -37,13 +39,13 @@ class AuthEmail extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('uid, email, password, updateTime', 'required'),
-			array('uid, updateTime', 'numerical', 'integerOnly'=>true),
+			array('email, password, updateTime', 'required'),
+			array('uid, updateTime, createTime', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>255),
 			array('password', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('uid, email, password, updateTime', 'safe', 'on'=>'search'),
+			array('id, uid, email, password, updateTime, createTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,10 +66,12 @@ class AuthEmail extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'uid' => 'Uid',
 			'email' => 'Email',
 			'password' => 'Password',
 			'updateTime' => 'Update Time',
+			'createTime' => 'Create Time',
 		);
 	}
 
@@ -82,10 +86,12 @@ class AuthEmail extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('uid',$this->uid);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('updateTime',$this->updateTime);
+		$criteria->compare('createTime',$this->createTime);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

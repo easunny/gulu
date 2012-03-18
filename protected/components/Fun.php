@@ -2,7 +2,7 @@
 /*
  * 常用的静态方法
  */
-class Functions
+class Fun
 {
 	public static function getIp()
 	{
@@ -18,5 +18,9 @@ class Functions
 			$ip  =  "unknown" ;
 		}
 		return $ip;
+	}
+	
+	public static function passwordEncode($password,$rand){
+		return md5(md5($password).$rand);
 	}
 }

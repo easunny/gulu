@@ -19,7 +19,7 @@ class RegisterForm extends CFormModel
 	public function rules()
 	{
 		return array(
-		array('email, nick, password, repassword', 'required','message'=>'{attribute}不能为空'),
+		array('email, password, repassword', 'required','message'=>'{attribute}不能为空'),
 		// password needs to be authenticated
 		array('email', 'email','message'=>'邮箱格式错误'),
 		array('email', 'checkEmail'),

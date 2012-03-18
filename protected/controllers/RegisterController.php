@@ -24,10 +24,9 @@ class RegisterController extends Controller
 				//注册信息
 				$data['email']=$model->email;
 				$data['time']=time();
-				$data['ip']='ip';
-				$data['password']=md5(md5($model->password).$data['time']);
+				$data['password']=Fun::passwordEncode($$model->password, $data['time']);
 				//保存到表中，email验证成功后添加到
-				$register = new Register;
+				$register = new RegEmail();
 				$register->email = $model->email;
 				$register->timestamp =time();
 				$register->rand = md5(rand());
@@ -54,7 +53,7 @@ class RegisterController extends Controller
 		}
 		//密钥是否有效
 		if(!$error){
-			$register = Register::model()->findByAttributes($_GET['id']);
+			$register = RegEmail::model()->findByAttributes($_GET['id']);
 			if(!$register || $register->del == 1){
 				$error = '链接已失效';
 			}elseif((time()-$register->timestamp)<3600*48){
@@ -65,54 +64,25 @@ class RegisterController extends Controller
 		}
 		//邮箱是否被注册
 		if(!$error){
-			$user = Users::model()->findByAttributes(array('email'=>$register->email));
+			$user = AuthEmail::model()->findByAttributes(array('email'=>$register->email));
 			if($user){
 				$error = '链接已失效';
 			}
 		}
-		$model=new RegisterNickForm;
-		// uncomment the following code to enable ajax-based validation
-		/*
-		if(isset($_POST['ajax']) && $_POST['ajax']==='register-nick-form-email-form')
-		{
-		echo CActiveForm::validate($model);
-		Yii::app()->end();
-		}
-		*/
-
-		if(!$error && isset($_POST['RegisterNickForm']))
-		{
-			$model->attributes=$_POST['RegisterNickForm'];
-			if($model->validate())
-			{
-				//删除邮件纪录
-				$register->del = 1;
-				$register->save();
-				//添加新用户
-				$user = new Users;
-				$data = json_decode($register->data);
-				$user->email = $register->email;
-				$user->nick = $model->nick;
-				$user->password = $data['password'];
-				$user->updateTime = $data['time'];
-				$user->lastTime = time();
-				$user->lastIp = Functions::getIp();
-				$user->save();
-				Yii::app()->user->login($user->uid);
-				return;
-			}
+		if(!$error){
+			$authEmail = new AuthEmail();
+			$data = json_decode($register->data);
+			$authEmail->email = $register->email;
+			$authEmail->password = $data['password'];
+			$authEmail->updateTime = $data['time'];
+			$authEmail->createTime = time();
+			$authEmail->save();
+			Yii::app()->user->setState('_reg_type','email');
+			Yii::app()->user->setState('_reg_email_id',$authEmail->id);
 		}
 		$this->render('email',array('model'=>$model,'error'=>$error));
 	}
 
-	protected  function binding() {
-		$oauthType = Yii::app()->user->_register_oauthType;
-		if('sina' == $oauthType){
-			;
-		}elseif ('qq' == $oauthType){
-			;
-		}
-	}
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()
